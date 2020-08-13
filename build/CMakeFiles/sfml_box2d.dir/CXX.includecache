@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../include/IPhysicsObject.h
+precompile.h
+../include/precompile.h
+
 ../include/box2d/b2_block_allocator.h
 box2d/b2_settings.h
 ../include/box2d/box2d/b2_settings.h
@@ -236,15 +240,31 @@ b2_weld_joint.h
 b2_wheel_joint.h
 ../include/box2d/b2_wheel_joint.h
 
-../include/contactListener.h
-box2d/box2d.h
--
+../include/config.h
 
-/home/keithpham/workspaces/CppProjects/sfml-box2d/source/main.cpp
+../include/precompile.h
 SFML/Graphics.hpp
 -
+SFML/Window.hpp
+-
+SFML/System.hpp
+-
 box2d/box2d.h
 -
-contactListener.h
-/home/keithpham/workspaces/CppProjects/sfml-box2d/source/contactListener.h
+iostream
+-
+string
+-
+config.h
+../include/config.h
+
+../include/worldManager.h
+precompile.h
+../include/precompile.h
+IPhysicsObject.h
+../include/IPhysicsObject.h
+
+/home/keithpham/workspaces/CppProjects/sfml-box2d/source/worldManager.cpp
+worldManager.h
+/home/keithpham/workspaces/CppProjects/sfml-box2d/source/worldManager.h
 

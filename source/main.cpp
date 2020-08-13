@@ -1,38 +1,33 @@
-#include <SFML/Graphics.hpp>
-#include <box2d/box2d.h>
+#include "precompile.h"
 #include "contactListener.h"
+#include "worldManager.h"
+#include "ball.h"
 
-/** We need this to easily convert between pixel and real-world coordinates*/
-static const float SCALE = 30.f;
-
-/** Create the base for the boxes to land */
-void CreateGround(b2World& World, float X, float Y);
-
-/** Create the boxes */
-void CreateBox(b2World& World, int MouseX, int MouseY);
+void logging(int num)
+{
+    std::cout << num << std::endl;
+}
 
 int main()
 {
     /** Prepare the window */
     sf::ContextSettings settings;
     settings.antialiasingLevel = 100;
+    settings.attributeFlags = sf::ContextSettings::Debug;
     sf::RenderWindow Window(sf::VideoMode(800, 600, 32), "Test", sf::Style::Default, settings);
     Window.setFramerateLimit(60);
 
-    /** Prepare the world */
-    b2Vec2 Gravity(0.f, 9.8f);
-    b2World World(Gravity);
-
     ContactListener* _contactListener = new ContactListener();
-    World.SetContactListener(_contactListener);
-    CreateGround(World, 400.f, 500.f);
+    World->SetContactListener(_contactListener);
 
-    /** Prepare textures */
-    //sf::Texture GroundTexture;
-    //sf::Texture BoxTexture;
-    //GroundTexture.loadFromFile("ground.png");
-    //BoxTexture.loadFromFile("box.png");
+    sf::Font font;
+    font.loadFromFile("MesloLGS NF Regular.ttf");
+    sf::Text text(" ", font);
+    text.setCharacterSize(30);
+    text.setStyle(sf::Text::Bold);
+    text.setFillColor(sf::Color::Red);
 
+    sf::Clock clock;
     while (Window.isOpen())
     {
         sf::Event event;
@@ -44,7 +39,9 @@ int main()
                 {
                     int MouseX = sf::Mouse::getPosition(Window).x;
                     int MouseY = sf::Mouse::getPosition(Window).y;
-                    CreateBox(World, MouseX, MouseY);
+                    // logging(World->GetBodyCount());
+                    Ball* ball = new Ball(MouseX, MouseY);
+                    World->AddObject(ball);
                 }
             }
             else if (event.type == sf::Event::Closed)
@@ -54,78 +51,113 @@ int main()
         }
 
 
-        /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
             int MouseX = sf::Mouse::getPosition(Window).x;
             int MouseY = sf::Mouse::getPosition(Window).y;
-            CreateBox(World, MouseX, MouseY);
-        }*/
-        World.Step(1/60.f, 8, 3);
+            Ball* ball = new Ball(MouseX, MouseY);
+            World->AddObject(ball);
+        }
+        World->Update();
 
-        Window.clear(sf::Color::White);
+        Window.clear(sf::Color::Black);
         int BodyCount = 0;
-        for (b2Body* BodyIterator = World.GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext())
+        for (b2Body* BodyIterator = World->GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext())
         {
             if (BodyIterator->GetType() == b2_dynamicBody)
             {
-                //sf::Sprite Sprite;
                 sf::CircleShape Sprite(16);
-                //Sprite.setTexture(BoxTexture);
-                Sprite.setFillColor(sf::Color::Red);
+                sf::Color* colorRan = (sf::Color*)(BodyIterator->GetUserData());
+                Sprite.setFillColor(*colorRan);
                 Sprite.setOrigin(16.f, 16.f);
                 Sprite.setPosition(SCALE * BodyIterator->GetPosition().x, SCALE * BodyIterator->GetPosition().y);
                 Sprite.setRotation(BodyIterator->GetAngle() * 180/b2_pi);
                 Window.draw(Sprite);
                 ++BodyCount;
             }
-            else
-            {
-                //sf::Sprite GroundSprite;
-                //GroundSprite.setTexture(GroundTexture);
-                sf::RectangleShape GroundSprite(sf::Vector2f(Window.getSize().x, 32));
-                GroundSprite.setFillColor(sf::Color::Black);
-                GroundSprite.setOrigin(400.f, 8.f);
-                GroundSprite.setPosition(BodyIterator->GetPosition().x * SCALE, BodyIterator->GetPosition().y * SCALE);
-                GroundSprite.setRotation(180/b2_pi * BodyIterator->GetAngle());
-                Window.draw(GroundSprite);
-            }
         }
+        
+        Window.draw(text);
         Window.display();
+
+        float curTime = clock.restart().asSeconds();
+        float fps = 1.f / curTime;
+        text.setString(std::to_string(int(fps)));
     }
 
 	return 0;
 }
 
-void CreateBox(b2World& World, int MouseX, int MouseY)
-{
-    b2BodyDef BodyDef;
-    BodyDef.position = b2Vec2(MouseX/SCALE, MouseY/SCALE);
-    BodyDef.type = b2_dynamicBody;
-    BodyDef.linearVelocity = b2Vec2(10, 0);
-    BodyDef.linearDamping = 0.5f;
-    b2Body* Body = World.CreateBody(&BodyDef);
+// void CreateBox(b2World& World, int MouseX, int MouseY)
+// {
+//     b2BodyDef BodyDef;
+//     BodyDef.position = b2Vec2(MouseX/SCALE, MouseY/SCALE);
+//     BodyDef.type = b2_dynamicBody;
+//     BodyDef.linearVelocity = b2Vec2(10, 0);
+//     BodyDef.linearDamping = 0.5f;
+//     sf::Color* colorR = new sf::Color(randomColor()); 
+//     BodyDef.userData = (void*)(colorR);
+//     b2Body* Body = World.CreateBody(&BodyDef);
 
-    b2CircleShape Shape;
-    Shape.m_radius = 16/SCALE;
-    b2FixtureDef FixtureDef;
-    FixtureDef.density = 1.f;
-    FixtureDef.friction = 0.7f;
-    FixtureDef.restitution = 0.7f;
-    FixtureDef.shape = &Shape;
-    Body->CreateFixture(&FixtureDef);
-}
+//     b2CircleShape Shape;
+//     Shape.m_radius = 16/SCALE;
+//     b2FixtureDef FixtureDef;
+//     FixtureDef.density = 1.f;
+//     FixtureDef.friction = 0.7f;
+//     FixtureDef.restitution = 0.7f;
+//     FixtureDef.shape = &Shape;
+//     Body->CreateFixture(&FixtureDef);
+// }
 
-void CreateGround(b2World& World, float X, float Y)
-{
-    b2BodyDef BodyDef;
-    BodyDef.position = b2Vec2(X/SCALE, Y/SCALE);
-    BodyDef.type = b2_staticBody;
-    b2Body* Body = World.CreateBody(&BodyDef);
+// void CreateGround(b2World& World, float X, float Y)
+// {
+//     b2BodyDef BodyDef;
+//     BodyDef.position = b2Vec2(400/SCALE, 0);
+//     BodyDef.type = b2_staticBody;
+//     b2Body* Body = World.CreateBody(&BodyDef);
 
-    b2PolygonShape Shape;
-    Shape.SetAsBox((800.f/2)/SCALE, (16.f/2)/SCALE);
-    b2FixtureDef FixtureDef;
-    FixtureDef.density = 0.f;
-    FixtureDef.shape = &Shape;
-    Body->CreateFixture(&FixtureDef);
-}
+//     b2PolygonShape Shape;
+//     Shape.SetAsBox((800.f/2)/SCALE, (2.f/2)/SCALE);
+//     b2FixtureDef FixtureDef;
+//     FixtureDef.density = 0.f;
+//     FixtureDef.shape = &Shape;
+//     Body->CreateFixture(&FixtureDef);
+    
+//     b2BodyDef BodyDef2;
+//     BodyDef2.position = b2Vec2(800/SCALE, 600/SCALE);
+//     BodyDef2.type = b2_staticBody;
+//     b2Body* Body2 = World.CreateBody(&BodyDef2);
+
+//     b2PolygonShape Shape2;
+//     Shape2.SetAsBox(2/SCALE, (600.f/2)/SCALE);
+//     b2FixtureDef FixtureDef2;
+//     FixtureDef2.density = 0.f;
+//     FixtureDef2.shape = &Shape2;
+//     Body2->CreateFixture(&FixtureDef2);
+
+//     b2BodyDef BodyDef3;
+//     BodyDef2.position = b2Vec2(X/SCALE, Y/SCALE);
+//     BodyDef2.type = b2_staticBody;
+//     b2Body* Body3 = World.CreateBody(&BodyDef3);
+
+//     b2PolygonShape Shape3;
+//     Shape3.SetAsBox((800.f/2)/SCALE, (2.f/2)/SCALE);
+//     b2FixtureDef FixtureDef3;
+//     FixtureDef3.density = 0.f;
+//     FixtureDef3.shape = &Shape3;
+//     Body3->CreateFixture(&FixtureDef3);
+
+//     b2BodyDef BodyDef4;
+//     BodyDef4.position = b2Vec2(0, 300/SCALE);
+//     BodyDef4.type = b2_staticBody;
+//     b2Body* Body4 = World.CreateBody(&BodyDef4);
+
+//     b2PolygonShape Shape4;
+//     Shape4.SetAsBox(2/SCALE, 300/SCALE);
+//     b2FixtureDef FixtureDef4;
+//     FixtureDef4.density = 0.f;
+//     FixtureDef4.shape = &Shape4;
+//     Body4->CreateFixture(&FixtureDef4);
+
+
+// }

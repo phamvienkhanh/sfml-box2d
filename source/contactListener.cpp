@@ -10,8 +10,8 @@ void ContactListener::BeginContact(b2Contact* contact)
     auto bodyA = contact->GetFixtureA()->GetBody();
     auto bodyB = contact->GetFixtureB()->GetBody();
 
-    std::cout << contact->GetFixtureA()->GetShape()->m_radius << std::endl;
-    std::cout << contact->GetFixtureB()->GetShape()->m_radius << std::endl;
+    //std::cout << contact->GetFixtureA()->GetShape()->m_radius << std::endl;
+    //std::cout << contact->GetFixtureB()->GetShape()->m_radius << std::endl;
 
     if(bodyA->GetType() == b2_dynamicBody)
     {
@@ -30,7 +30,7 @@ void ContactListener::BeginContact(b2Contact* contact)
     }
 
 
-    std::cout << "======= contact ====="<< std::endl;
+    //std::cout << "======= contact ====="<< std::endl;
 }
 
 void ContactListener::EndContact(b2Contact* contact)

@@ -77,45 +77,90 @@ include CMakeFiles/sfml_box2d.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/sfml_box2d.dir/flags.make
 
+CMakeFiles/sfml_box2d.dir/source/ball.cpp.o: CMakeFiles/sfml_box2d.dir/flags.make
+CMakeFiles/sfml_box2d.dir/source/ball.cpp.o: ../source/ball.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sfml_box2d.dir/source/ball.cpp.o"
+	/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml_box2d.dir/source/ball.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/ball.cpp
+
+CMakeFiles/sfml_box2d.dir/source/ball.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml_box2d.dir/source/ball.cpp.i"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keithpham/workspaces/CppProjects/sfml-box2d/source/ball.cpp > CMakeFiles/sfml_box2d.dir/source/ball.cpp.i
+
+CMakeFiles/sfml_box2d.dir/source/ball.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_box2d.dir/source/ball.cpp.s"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keithpham/workspaces/CppProjects/sfml-box2d/source/ball.cpp -o CMakeFiles/sfml_box2d.dir/source/ball.cpp.s
+
 CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.o: CMakeFiles/sfml_box2d.dir/flags.make
 CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.o: ../source/contactListener.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/contactListener.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.o"
+	/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/contactListener.cpp
 
 CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keithpham/workspaces/CppProjects/sfml-box2d/source/contactListener.cpp > CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.i
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keithpham/workspaces/CppProjects/sfml-box2d/source/contactListener.cpp > CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.i
 
 CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keithpham/workspaces/CppProjects/sfml-box2d/source/contactListener.cpp -o CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.s
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keithpham/workspaces/CppProjects/sfml-box2d/source/contactListener.cpp -o CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.s
 
 CMakeFiles/sfml_box2d.dir/source/main.cpp.o: CMakeFiles/sfml_box2d.dir/flags.make
 CMakeFiles/sfml_box2d.dir/source/main.cpp.o: ../source/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sfml_box2d.dir/source/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml_box2d.dir/source/main.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sfml_box2d.dir/source/main.cpp.o"
+	/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml_box2d.dir/source/main.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/main.cpp
 
 CMakeFiles/sfml_box2d.dir/source/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml_box2d.dir/source/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keithpham/workspaces/CppProjects/sfml-box2d/source/main.cpp > CMakeFiles/sfml_box2d.dir/source/main.cpp.i
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keithpham/workspaces/CppProjects/sfml-box2d/source/main.cpp > CMakeFiles/sfml_box2d.dir/source/main.cpp.i
 
 CMakeFiles/sfml_box2d.dir/source/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_box2d.dir/source/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keithpham/workspaces/CppProjects/sfml-box2d/source/main.cpp -o CMakeFiles/sfml_box2d.dir/source/main.cpp.s
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keithpham/workspaces/CppProjects/sfml-box2d/source/main.cpp -o CMakeFiles/sfml_box2d.dir/source/main.cpp.s
+
+CMakeFiles/sfml_box2d.dir/source/precompile.cpp.o: CMakeFiles/sfml_box2d.dir/flags.make
+CMakeFiles/sfml_box2d.dir/source/precompile.cpp.o: ../source/precompile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sfml_box2d.dir/source/precompile.cpp.o"
+	/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml_box2d.dir/source/precompile.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/precompile.cpp
+
+CMakeFiles/sfml_box2d.dir/source/precompile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml_box2d.dir/source/precompile.cpp.i"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keithpham/workspaces/CppProjects/sfml-box2d/source/precompile.cpp > CMakeFiles/sfml_box2d.dir/source/precompile.cpp.i
+
+CMakeFiles/sfml_box2d.dir/source/precompile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_box2d.dir/source/precompile.cpp.s"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keithpham/workspaces/CppProjects/sfml-box2d/source/precompile.cpp -o CMakeFiles/sfml_box2d.dir/source/precompile.cpp.s
+
+CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.o: CMakeFiles/sfml_box2d.dir/flags.make
+CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.o: ../source/worldManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.o"
+	/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/worldManager.cpp
+
+CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.i"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keithpham/workspaces/CppProjects/sfml-box2d/source/worldManager.cpp > CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.i
+
+CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.s"
+	/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keithpham/workspaces/CppProjects/sfml-box2d/source/worldManager.cpp -o CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.s
 
 # Object files for target sfml_box2d
 sfml_box2d_OBJECTS = \
+"CMakeFiles/sfml_box2d.dir/source/ball.cpp.o" \
 "CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.o" \
-"CMakeFiles/sfml_box2d.dir/source/main.cpp.o"
+"CMakeFiles/sfml_box2d.dir/source/main.cpp.o" \
+"CMakeFiles/sfml_box2d.dir/source/precompile.cpp.o" \
+"CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.o"
 
 # External object files for target sfml_box2d
 sfml_box2d_EXTERNAL_OBJECTS =
 
+sfml_box2d: CMakeFiles/sfml_box2d.dir/source/ball.cpp.o
 sfml_box2d: CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.o
 sfml_box2d: CMakeFiles/sfml_box2d.dir/source/main.cpp.o
+sfml_box2d: CMakeFiles/sfml_box2d.dir/source/precompile.cpp.o
+sfml_box2d: CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.o
 sfml_box2d: CMakeFiles/sfml_box2d.dir/build.make
 sfml_box2d: CMakeFiles/sfml_box2d.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable sfml_box2d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable sfml_box2d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sfml_box2d.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

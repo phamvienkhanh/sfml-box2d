@@ -143,6 +143,33 @@ sfml_box2d/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/build
 .PHONY : sfml_box2d/fast
 
+source/ball.o: source/ball.cpp.o
+
+.PHONY : source/ball.o
+
+# target to build an object file
+source/ball.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/ball.cpp.o
+.PHONY : source/ball.cpp.o
+
+source/ball.i: source/ball.cpp.i
+
+.PHONY : source/ball.i
+
+# target to preprocess a source file
+source/ball.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/ball.cpp.i
+.PHONY : source/ball.cpp.i
+
+source/ball.s: source/ball.cpp.s
+
+.PHONY : source/ball.s
+
+# target to generate assembly for a file
+source/ball.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/ball.cpp.s
+.PHONY : source/ball.cpp.s
+
 source/contactListener.o: source/contactListener.cpp.o
 
 .PHONY : source/contactListener.o
@@ -197,6 +224,60 @@ source/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
+source/precompile.o: source/precompile.cpp.o
+
+.PHONY : source/precompile.o
+
+# target to build an object file
+source/precompile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/precompile.cpp.o
+.PHONY : source/precompile.cpp.o
+
+source/precompile.i: source/precompile.cpp.i
+
+.PHONY : source/precompile.i
+
+# target to preprocess a source file
+source/precompile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/precompile.cpp.i
+.PHONY : source/precompile.cpp.i
+
+source/precompile.s: source/precompile.cpp.s
+
+.PHONY : source/precompile.s
+
+# target to generate assembly for a file
+source/precompile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/precompile.cpp.s
+.PHONY : source/precompile.cpp.s
+
+source/worldManager.o: source/worldManager.cpp.o
+
+.PHONY : source/worldManager.o
+
+# target to build an object file
+source/worldManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.o
+.PHONY : source/worldManager.cpp.o
+
+source/worldManager.i: source/worldManager.cpp.i
+
+.PHONY : source/worldManager.i
+
+# target to preprocess a source file
+source/worldManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.i
+.PHONY : source/worldManager.cpp.i
+
+source/worldManager.s: source/worldManager.cpp.s
+
+.PHONY : source/worldManager.s
+
+# target to generate assembly for a file
+source/worldManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml_box2d.dir/build.make CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.s
+.PHONY : source/worldManager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -206,12 +287,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sfml_box2d"
+	@echo "... source/ball.o"
+	@echo "... source/ball.i"
+	@echo "... source/ball.s"
 	@echo "... source/contactListener.o"
 	@echo "... source/contactListener.i"
 	@echo "... source/contactListener.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
+	@echo "... source/precompile.o"
+	@echo "... source/precompile.i"
+	@echo "... source/precompile.s"
+	@echo "... source/worldManager.o"
+	@echo "... source/worldManager.i"
+	@echo "... source/worldManager.s"
 .PHONY : help
 
 

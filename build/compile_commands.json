@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/keithpham/workspaces/CppProjects/sfml-box2d/build",
+  "command": "/bin/g++   -I/home/keithpham/workspaces/CppProjects/sfml-box2d/include  -g   -o CMakeFiles/sfml_box2d.dir/source/ball.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/ball.cpp",
+  "file": "/home/keithpham/workspaces/CppProjects/sfml-box2d/source/ball.cpp"
+},
+{
+  "directory": "/home/keithpham/workspaces/CppProjects/sfml-box2d/build",
+  "command": "/bin/g++   -I/home/keithpham/workspaces/CppProjects/sfml-box2d/include  -g   -o CMakeFiles/sfml_box2d.dir/source/contactListener.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/contactListener.cpp",
+  "file": "/home/keithpham/workspaces/CppProjects/sfml-box2d/source/contactListener.cpp"
+},
+{
+  "directory": "/home/keithpham/workspaces/CppProjects/sfml-box2d/build",
+  "command": "/bin/g++   -I/home/keithpham/workspaces/CppProjects/sfml-box2d/include  -g   -o CMakeFiles/sfml_box2d.dir/source/main.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/main.cpp",
+  "file": "/home/keithpham/workspaces/CppProjects/sfml-box2d/source/main.cpp"
+},
+{
+  "directory": "/home/keithpham/workspaces/CppProjects/sfml-box2d/build",
+  "command": "/bin/g++   -I/home/keithpham/workspaces/CppProjects/sfml-box2d/include  -g   -o CMakeFiles/sfml_box2d.dir/source/precompile.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/precompile.cpp",
+  "file": "/home/keithpham/workspaces/CppProjects/sfml-box2d/source/precompile.cpp"
+},
+{
+  "directory": "/home/keithpham/workspaces/CppProjects/sfml-box2d/build",
+  "command": "/bin/g++   -I/home/keithpham/workspaces/CppProjects/sfml-box2d/include  -g   -o CMakeFiles/sfml_box2d.dir/source/worldManager.cpp.o -c /home/keithpham/workspaces/CppProjects/sfml-box2d/source/worldManager.cpp",
+  "file": "/home/keithpham/workspaces/CppProjects/sfml-box2d/source/worldManager.cpp"
+}
+]
