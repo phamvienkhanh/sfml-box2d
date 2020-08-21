@@ -38,6 +38,8 @@ b2Body* Ball::GetBody()
 void Ball::SetBody(b2Body* body)
 {
     m_body = body;
+    int a[10];
+    a[10] = 0;
 }
 
 b2BodyDef* Ball::GetBodyDef()

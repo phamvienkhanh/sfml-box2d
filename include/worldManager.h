@@ -16,9 +16,11 @@ public:
     void SetContactListener(b2ContactListener* contactListener); 
     void AddObject(IPhysicsObject* physicsObject);
 
+    void CreateWorldBound(unsigned int width, unsigned int height);
     void Update();
 
     WorldManager();
+
 private:
     void init();
 
