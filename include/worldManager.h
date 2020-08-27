@@ -18,6 +18,9 @@ public:
 
     void CreateWorldBound(unsigned int width, unsigned int height);
     void Update();
+    void SetDrawDebug(sf::RenderWindow* window);
+    
+    void DrawDebug();
 
     WorldManager();
 

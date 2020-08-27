@@ -1,4 +1,5 @@
 #include "worldManager.h"
+#include "DebugDraw.h"
 
 WorldManager* WorldManager::s_intance = nullptr;
 
@@ -69,6 +70,20 @@ b2Body* WorldManager::GetBodyList()
 void WorldManager::Update()
 {
     m_world->Step(1/60.f, 8, 3);
+}
+
+void WorldManager::SetDrawDebug(sf::RenderWindow* widown)
+{
+    SFMLDebugDraw* mydbDraw = new SFMLDebugDraw(widown);
+    m_world->SetDebugDraw(mydbDraw);
+
+    /* Set initial flags for what to draw */
+	mydbDraw->SetFlags(b2Draw::e_shapeBit); //Only draw shapes
+}
+
+void WorldManager::DrawDebug()
+{
+    m_world->DebugDraw();
 }
 
 WorldManager::WorldManager()

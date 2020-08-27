@@ -13,11 +13,14 @@ int main()
     /** Prepare the window */
     sf::ContextSettings settings;
     settings.antialiasingLevel = 100;
-    settings.attributeFlags = sf::ContextSettings::Debug;
+    // settings.attributeFlags = sf::ContextSettings::Debug;
     sf::RenderWindow Window(sf::VideoMode(800, 600, 32), "Test", sf::Style::Default, settings);
     Window.setFramerateLimit(60);
 
+    World->SetDrawDebug(&Window);
     World->CreateWorldBound(800, 600);
+
+
 
     ContactListener* _contactListener = new ContactListener();
     World->SetContactListener(_contactListener);
@@ -78,7 +81,8 @@ int main()
                 ++BodyCount;
             }
         }
-        
+
+        World->DrawDebug();
         Window.draw(text);
         Window.display();
 
