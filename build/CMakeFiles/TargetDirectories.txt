@@ -1,3 +1,0 @@
-/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles/rebuild_cache.dir
-/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles/edit_cache.dir
-/home/keithpham/workspaces/CppProjects/sfml-box2d/build/CMakeFiles/sfml_box2d.dir
